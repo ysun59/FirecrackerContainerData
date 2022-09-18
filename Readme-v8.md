@@ -25,6 +25,7 @@ let 13 firecrackers, each set to different cores, from core 0,2,4,6,8…….20
 * hotel-reserv-reservation-mmc —---—---------------core 25, 27
 
 set frontend to core 1 or above (basically core 1,3,5-more-15)
+
 set wrk to core 31, or 31, 29
 
 ## Generation Scrpts：
