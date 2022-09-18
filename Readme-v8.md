@@ -28,14 +28,16 @@ set frontend to core 1 or above (basically core 1,3,5-more-15)
 set wrk to core 31, or 31, 29
 
 ## Generation Scrpts：
-test-CPU-randomCore-grayfox-firecracker
-test-CPU-oddEvenCore-grayfox-firecracker
+* test-CPU-randomCore-grayfox-firecracker
+* test-CPU-oddEvenCore-grayfox-firecracker
 不能直接用，config的xxx.yml里面cpus数量要改动的
 
 ## Data to use:
 grayfox
 ~/yu/Res-DeathStartBench-data-V4-CPU-grayfox/xxx/
-Res-firecracker-random-in4-v8
-Res-firecracker-random-in2-v8
-Res-firecracker-set-v8
+
+### Firecracker:
+* Res-firecracker-random-in4-v8
+* Res-firecracker-random-in2-v8
+* Res-firecracker-set-v8
 

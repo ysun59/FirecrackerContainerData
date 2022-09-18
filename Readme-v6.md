@@ -27,22 +27,22 @@ Set wrk to core 31 or 31, 29
 
 
 ## Generation Scrpts：
-test-CPU-randomCore-grayfox
-test-CPU-oddEvenCore-grayfox
-test-CPU-setEvenCore-randomFront-grayfox
+* test-CPU-randomCore-grayfox
+* test-CPU-oddEvenCore-grayfox
+* test-CPU-setEvenCore-randomFront-grayfox
 
 
 ## Data to use:
 grayfox
 ~/yu/Res-DeathStartBench-data-V4-CPU-grayfox/xxx/
 
-Container:
-Res-container-random-v6            
-Res-container-set-v6              
-Res-container-setEven-randomFront-v6 
+### Container:
+* Res-container-random-v6            
+* Res-container-set-v6              
+* *Res-container-setEven-randomFront-v6 
 
-Firecracker:
-Res-firecracker-random-v66
-Res-firecracker-set-v66 
-Res-firecracker-setEven-randomFront-v66
+### Firecracker:
+* Res-firecracker-random-v66
+* *Res-firecracker-set-v66 
+* Res-firecracker-setEven-randomFront-v66
 
