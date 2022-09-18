@@ -1,8 +1,14 @@
 # Hotel Reservation Data
 
 let 18 firecrackers, each set to different cores, from core 0,2,4,6,8..30
+
 set frontend to core 1 or above (basically core 1,3,5-more)
+
 Set wrk to core 31 or 31, 29
+
+## Overall CPU Excel
+Can see the overall CPU utilization, throughtput, BW etc. in this excel https://docs.google.com/spreadsheets/d/1nqbX1AJGnkIxAj1I9twPJTn0nmvar_foXHzVB_jnIkk/edit#gid=964937397
+
 
 ## VMs - Corresponding cores
 * consul \ -—-—----------------—------------------ core 0
@@ -39,10 +45,11 @@ grayfox
 ### Container:
 * Res-container-random-v6            
 * Res-container-set-v6              
-* *Res-container-setEven-randomFront-v6 
+* Res-container-setEven-randomFront-v6 
 
 ### Firecracker:
 * Res-firecracker-random-v66
-* *Res-firecracker-set-v66 
+* Res-firecracker-set-v66 
 * Res-firecracker-setEven-randomFront-v66
 
+Data in upper Container(xxx-v6) and Firecracker(xxx-v66) folders is using the same settings.

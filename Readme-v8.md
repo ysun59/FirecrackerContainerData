@@ -2,6 +2,14 @@
 
 let 13 firecrackers, each set to different cores, from core 0,2,4,6,8…….20
 
+set frontend to core 1 or above (basically core 1,3,5-more-15)
+
+set wrk to core 31, or 31, 29
+
+## Overall CPU Excel
+Can see the overall CPU utilization, throughtput, BW etc. in this excel https://docs.google.com/spreadsheets/d/1OmfJ4UT-Cw-CNSZ0VV-yk57sbN3G0qPgXfp6dItvTHI/edit#gid=365422113
+
+
 ## VMs - Corresponding cores
 * consul \ -—-—----------------—------------------ core 0
 * hotel-reserv-geo \ —---------------------------- core 2
@@ -24,9 +32,6 @@ let 13 firecrackers, each set to different cores, from core 0,2,4,6,8…….20
 * hotel-reserv-reservation —---------------------- core 21, 23
 * hotel-reserv-reservation-mmc —---—---------------core 25, 27
 
-set frontend to core 1 or above (basically core 1,3,5-more-15)
-
-set wrk to core 31, or 31, 29
 
 ## Generation Scrpts：
 * test-CPU-randomCore-grayfox-firecracker
