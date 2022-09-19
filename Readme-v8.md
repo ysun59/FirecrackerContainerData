@@ -43,7 +43,8 @@ grayfox
 ~/yu/Res-DeathStartBench-data-V4-CPU-grayfox/xxx/
 
 ### Firecracker:
-* Res-firecracker-random-in4-v8 (each firecracker ramdom limit in 4 cores)
-* Res-firecracker-random-in2-v8 (each firecracker ramdom limit in 2 cores)
-* Res-firecracker-set-v8 (each firecracker set to 2 cores)
+* Res-firecracker-random-in4-v8 (each firecracker ramdom limit run in 4 cores)
+* Res-firecracker-random-in2-v8 (see "VMs - Corresponding cores" part)
+* Res-firecracker-set-v8 (see "VMs - Corresponding cores" part)
 
+Data in upper Res-firecracker-random-in2-v8 and Res-firecracker-set-v8 folders is using the same settings.
