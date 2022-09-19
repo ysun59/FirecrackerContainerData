@@ -44,6 +44,45 @@ for folder in folders:
     with open(mpstat_csv_path, 'wt') as file:
       file.write('\n'.join(outputs))
 
+# #draw pictures cpu utilization during time
+def mpstatDataPng():
+  for folder in folders:
+    mpstat_csv_path = os.path.join('.', folder, 'mpstat_data.csv')
+
+    if os.path.exists(mpstat_csv_path):
+      plt.style.use('ggplot') #图的风格bmh、ggplot、dark_background、fivethirtyeight和grayscale。
+
+      data = pd.read_table(mpstat_csv_path,sep=',',encoding='utf_8_sig',engine='python',header=None) #pd.read_table返回一个数据结构,DataFrame
+      # T=data.T #行列转换
+      # print("第一行")
+      # print(data.iloc[0])  #打印第一行
+      rowZero=data.iloc[0] #打印第一行
+      colNum = len(rowZero) #第一行有几个数字
+
+      # date=data.values
+      # date=data[0]
+      # print(date)
+      plt.cla() #清空坐标轴
+      x = range(0,len(data)) #60个数字60s
+      for i in range(0,colNum-1): #32个core，这个是非典型画图，跳过了第一列，第一列是all
+      # for i in range(0,4): #32个core
+        plt.plot(x, data[i+1], '-', marker='o',label='cpu{}'.format(i)) #s-:方形,o-:圆形
+      plt.plot(x, data[0], '-', marker='o',label='avg cpu') #s-:方形,o-:圆形,把跳过的第一列的线画在最后
+      plt.xlabel('time(s)') #横坐标名
+      plt.xticks(rotation=45)
+      plt.gca().yaxis.set_major_formatter(mticker.FormatStrFormatter('%d')) #gca就是get current axes的意思
+      plt.ylabel('Cpu Utilization %') #纵坐标名
+      plt.title('{}_cpu_overtime'.format(folder))
+      plt.legend(loc='lower left', bbox_to_anchor=(1.01,0),ncol=2) #图例 (loc='best')自动选择放在合适位置，loc指的是我们的legend的左下角的那个顶点的坐标
+      plt.grid(True) #设置网格模式
+      sch_fig_path = os.path.join('.', folder, 'mpstat_data_overtime.png')
+      # print(sch_fig_path)
+
+      fig=plt.figure(1) #解决1
+      fig.savefig(sch_fig_path, bbox_inches='tight') #解决1
+
+mpstatDataPng() #
+
 
 #print avg cpu utlization of all cores during 60s
 def printAvgCpu():
@@ -76,7 +115,7 @@ def printAvgCpu():
         print(avg)
         print("")
 
-# printAvgCpu()
+printAvgCpu()
 
 
 #第一张图
