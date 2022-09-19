@@ -10,16 +10,21 @@ The firecreackers in [Readme-v8.md](https://github.com/ysun59/FirecrackerContain
 ### CPU related
 Use `mpstat -P ALL 1` to generate "cpu_perf.txt".
 
-Use 
+Use fio_extract.py to deal data and get graphs.
 
+- Graphs:
+    - mpstat_all.png
+    - mpstat_UsrSysEtc.png
 
 ### Schedstat
 Use `cat  /proc/schedstat` to generate "schedstat.txt".
 
-Get the colume 7, 8, 9 of the cpu0 to 31
-- colume 9 means: # of tasks (not necessarily unique) given to the processor or means: # of timeslices run on this cpu.
+Use schedstat_extract.py to deal data and get graphs.
 
-Can refer to http://eaglet.pdxhosts.com/rick/linux/schedstat/v15/format-15.html or https://docs.kernel.org/scheduler/sched-stats.html for detailed info.
+Get the colume 7, 8, 9 of the cpu0 to 31
+- Meaning
+    - Colume 9 means: # of tasks (not necessarily unique) given to the processor or means: # of timeslices run on this cpu.
+    - Can refer to http://eaglet.pdxhosts.com/rick/linux/schedstat/v15/format-15.html or https://docs.kernel.org/scheduler/sched-stats.html for detailed info of colume 7, colume 8.
 - Graphs:
     - schedstat_fig_col_7.png
     - schedstat_fig_col_8.png
@@ -28,5 +33,17 @@ Can refer to http://eaglet.pdxhosts.com/rick/linux/schedstat/v15/format-15.html 
 ### Sched_debug
 Use `cat /proc/sched_debug` to generate "schedDebug.txt".
 
+Use schedDebug_extract.py to deal data and get graphs.
+
+Get the `.nr_switches` of each core.
+- Graphs:
+    - schedDebug_fig.png
+
 ### Interrupts
 Use `cat /proc/interrupts` to generate "interrupts.txt".
+
+Use interrupts_extract.py to deal data and get graphs.
+
+Get the `RES: ....... Rescheduling interrupts` of each core.
+- Graphs:
+    - interrupts_fig.png
